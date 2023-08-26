@@ -419,7 +419,7 @@ local function FMYQE_fake_script() -- HyphixLoadstringVersion.ConnectionsToUI
 	}
 	GuiLibrary:LoadDefault()
 	
-	GuiLibrary:Notification("Hyphix","A staff member has been detected, loading unblatant settings")
+	GuiLibrary:Notification("Hyphix V3", "Coming soon!", 5)
 	
 	
 	for i,v in pairs(HyphixData.WhitelistedUsers) do
