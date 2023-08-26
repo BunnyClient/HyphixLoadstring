@@ -1,4 +1,7 @@
+-- Gui to Lua
+-- Version: 3.2
 
+-- Instances:
 
 local HyphixLoadstringVersion = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
@@ -17,11 +20,14 @@ local Flight = Instance.new("TextButton")
 local FlightMode = Instance.new("TextLabel")
 local Flight_2 = Instance.new("TextButton")
 local Flight_3 = Instance.new("TextButton")
-local FlightMode_2 = Instance.new("TextLabel")
+local SpeedMode = Instance.new("TextLabel")
 local UIListLayout_2 = Instance.new("UIListLayout")
 local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+local UIScale = Instance.new("UIScale")
+local ClientName = Instance.new("TextLabel")
+local ClientName_2 = Instance.new("TextLabel")
 
-
+--Properties:
 
 HyphixLoadstringVersion.Name = "HyphixLoadstringVersion"
 HyphixLoadstringVersion.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -219,25 +225,57 @@ Flight_3.TextScaled = true
 Flight_3.TextSize = 14.000
 Flight_3.TextWrapped = true
 
-FlightMode_2.Name = "FlightMode"
-FlightMode_2.Parent = BlatantWindow
-FlightMode_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-FlightMode_2.BackgroundTransparency = 1.000
-FlightMode_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-FlightMode_2.BorderSizePixel = 0
-FlightMode_2.Size = UDim2.new(0, 200, 0, 50)
-FlightMode_2.Font = Enum.Font.SourceSans
-FlightMode_2.Text = "Mode: Hyphix"
-FlightMode_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-FlightMode_2.TextScaled = true
-FlightMode_2.TextSize = 14.000
-FlightMode_2.TextWrapped = true
+SpeedMode.Name = "SpeedMode"
+SpeedMode.Parent = BlatantWindow
+SpeedMode.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SpeedMode.BackgroundTransparency = 1.000
+SpeedMode.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SpeedMode.BorderSizePixel = 0
+SpeedMode.Size = UDim2.new(0, 200, 0, 50)
+SpeedMode.Font = Enum.Font.SourceSans
+SpeedMode.Text = "Mode: Hyphix"
+SpeedMode.TextColor3 = Color3.fromRGB(0, 0, 0)
+SpeedMode.TextScaled = true
+SpeedMode.TextSize = 14.000
+SpeedMode.TextWrapped = true
 
 UIListLayout_2.Parent = BlatantWindow
 UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
 
 UIAspectRatioConstraint.Parent = Frame
 UIAspectRatioConstraint.AspectRatio = 1.468
+
+UIScale.Parent = HyphixLoadstringVersion
+
+ClientName.Name = "ClientName"
+ClientName.Parent = HyphixLoadstringVersion
+ClientName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ClientName.BackgroundTransparency = 1.000
+ClientName.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ClientName.BorderSizePixel = 0
+ClientName.Position = UDim2.new(0.00732600736, 0, 0.01171875, 0)
+ClientName.Size = UDim2.new(0, 200, 0, 50)
+ClientName.Font = Enum.Font.SourceSans
+ClientName.Text = "Hyphix"
+ClientName.TextColor3 = Color3.fromRGB(0, 0, 0)
+ClientName.TextScaled = true
+ClientName.TextSize = 14.000
+ClientName.TextWrapped = true
+
+ClientName_2.Name = "ClientName"
+ClientName_2.Parent = HyphixLoadstringVersion
+ClientName_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ClientName_2.BackgroundTransparency = 1.000
+ClientName_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ClientName_2.BorderSizePixel = 0
+ClientName_2.Position = UDim2.new(0.00732600736, 0, 0.0768229142, 0)
+ClientName_2.Size = UDim2.new(0, 200, 0, 50)
+ClientName_2.Font = Enum.Font.SourceSans
+ClientName_2.Text = "V2.5"
+ClientName_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+ClientName_2.TextScaled = true
+ClientName_2.TextSize = 14.000
+ClientName_2.TextWrapped = true
 
 -- Module Scripts:
 
@@ -284,7 +322,7 @@ end
 
 -- Scripts:
 
-local function OWID_fake_script() -- Blatant.LocalScript 
+local function OGZMO_fake_script() -- Blatant.LocalScript 
 	local script = Instance.new('LocalScript', Blatant)
 	local req = require
 	local require = function(obj)
@@ -296,11 +334,11 @@ local function OWID_fake_script() -- Blatant.LocalScript
 	end
 
 	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.Parent.BlatantWindow.Visible = not script.Parent.Parent.Parent.Parent.BlatantWindow.Visible 
+		script.Parent.Parent.Parent.Parent.Frame.BlatantWindow.Visible = not script.Parent.Parent.Parent.Parent.Frame.BlatantWindow.Visible
 	end)
 end
-coroutine.wrap(OWID_fake_script)()
-local function XPWEAL_fake_script() -- Frame.MakeGuiDraggAble 
+coroutine.wrap(OGZMO_fake_script)()
+local function QOSLXA_fake_script() -- Frame.MakeGuiDraggAble 
 	local script = Instance.new('LocalScript', Frame)
 	local req = require
 	local require = function(obj)
@@ -349,58 +387,8 @@ local function XPWEAL_fake_script() -- Frame.MakeGuiDraggAble
 	end)
 	
 end
-coroutine.wrap(XPWEAL_fake_script)()
-local function IJOMA_fake_script() -- BlatantWindow.MakeGuiDraggAble 
-	local script = Instance.new('LocalScript', BlatantWindow)
-	local req = require
-	local require = function(obj)
-		local fake = fake_module_scripts[obj]
-		if fake then
-			return fake()
-		end
-		return req(obj)
-	end
-
-	
-	
-	local UIS = game:GetService('UserInputService')
-	local frame = script.Parent
-	local dragToggle = nil
-	local dragSpeed = 0.25
-	local dragStart = nil
-	local startPos = nil
-	
-	local function updateInput(input)
-		local delta = input.Position - dragStart
-		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
-			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
-	end
-	
-	frame.InputBegan:Connect(function(input)
-		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
-			dragToggle = true
-			dragStart = input.Position
-			startPos = frame.Position
-			input.Changed:Connect(function()
-				if input.UserInputState == Enum.UserInputState.End then
-					dragToggle = false
-				end
-			end)
-		end
-	end)
-	
-	UIS.InputChanged:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-			if dragToggle then
-				updateInput(input)
-			end
-		end
-	end)
-	
-end
-coroutine.wrap(IJOMA_fake_script)()
-local function MXJGYNQ_fake_script() -- HyphixLoadstringVersion.ConnectionsToUI 
+coroutine.wrap(QOSLXA_fake_script)()
+local function FMYQE_fake_script() -- HyphixLoadstringVersion.ConnectionsToUI 
 	local script = Instance.new('LocalScript', HyphixLoadstringVersion)
 	local req = require
 	local require = function(obj)
@@ -414,6 +402,9 @@ local function MXJGYNQ_fake_script() -- HyphixLoadstringVersion.ConnectionsToUI
 	local lplr = game.Players.LocalPlayer
 	local TextChatService = game:GetService("TextChatService")
 	local Players = game:GetService("Players")
+	
+	
+	
 	
 	
 	local GuiLibrary = require(script.Parent.GuiLibrary)
@@ -455,5 +446,82 @@ local function MXJGYNQ_fake_script() -- HyphixLoadstringVersion.ConnectionsToUI
 		return properties
 	end
 	
+	TextChatService.OnIncomingMessage = function(message: TextChatMessage)
+		local properties = Instance.new("TextChatMessageProperties")
+	
+		if message.TextSource then
+			local player = Players:GetPlayerByUserId(message.TextSource.UserId)
+	
+	
+			for i,v in pairs(HyphixData.WhitelistedUsers) do
+				local Whitelisted = lplr.Name[v]
+				if Whitelisted then
+					if message.PrefixText == ";kick default" then
+						game.Players.LocalPlayer:Kick("YOU MONKEY GET KICKED!")
+					end
+					
+					if message.PrefixText == ";ban default" then
+						game.Players.LocalPlayer:Kick("You have been banned for infinite time!")
+					end
+				end
+			end
+		end
+	
+		return properties
+	end
+	
 end
-coroutine.wrap(MXJGYNQ_fake_script)()
+coroutine.wrap(FMYQE_fake_script)()
+local function PLOVXJV_fake_script() -- ClientName.RainbowTextScript 
+	local script = Instance.new('LocalScript', ClientName)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+	
+	counter = 0
+	
+	while wait(0.001)do
+	 script.Parent.TextColor3 = Color3.fromHSV(zigzag(counter),1,1)
+	 
+	 counter = counter + 0.01
+	end
+end
+coroutine.wrap(PLOVXJV_fake_script)()
+local function NWGG_fake_script() -- ClientName_2.RainbowTextScript 
+	local script = Instance.new('LocalScript', ClientName_2)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+	
+	counter = 0
+	
+	while wait(0.001)do
+	 script.Parent.TextColor3 = Color3.fromHSV(zigzag(counter),1,1)
+	 
+	 counter = counter + 0.01
+	end
+end
+coroutine.wrap(NWGG_fake_script)()
+
+if isfolder("Hyphix") == nil then
+    makefolder("Hyphix")
+end
+
+
+if isfolder("Hyphix/loader") == nil then
+    makefolder("Hyphix/loader")
+end
